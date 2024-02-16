@@ -10,9 +10,10 @@
 | -------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
 | [useEffect() Hook](https://react.dev/reference/react/useEffect) |                 | [Take a look at my portfolio](https://kaplanh.github.io/Portfolio_with_CssFlex/) |
 | [useState() Hook](https://react.dev/learn#using-hooks)                                  |                                 | [Visit me on Linkedin](https://www.linkedin.com/in/kaplan-h/)                    |
-| [Optional Chaning](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)                           |                                            |                    |
+| [Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)                           |                                            |                    |
+| [ECMAScript Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)                           |                                            |                    |
 | [react-events](https://react.dev/learn#responding-to-events)                           |                                            |                    |
-| [React-Conditional rendering](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
+| [React-Conditional rendering (&&,||,?:)](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
 | [React-Bootstrap](https://react-bootstrap.netlify.app/)                                 | npm i / yarn add react-bootstrap bootstrap |                                                                        |
 | [Semantic-Commits](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) |                                            |                                                                        |
 | [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) |                                            |                                                                        |
@@ -117,7 +118,7 @@ OR
 
 ### At the end of the project, the following topics are to be covered;
 
--   useEffect() hook
+- useEffect() hook
 
     ```jsx
         // src/components/User.jsx
@@ -145,83 +146,38 @@ OR
 
  ```
 
- 
 - conditional rendering + cconditional Css
 
     ```jsx
-       i {apps.length < 1 && (
-                <img
-                    src="./img/appointment.jpg"
-                    width="70%"
-                    alt="appointment"
-                />
-            )}
-
-            {apps.map(({ id, patient, consulted, doctor, day }) => (
-                <div
-                    key={id}
-                    className={
-                        consulted ? "appointments consulted" : "appointments"
-                    }
-                    onDoubleClick={() => handleDoubleClick(id)}
-                >
-                    <Row className="justify-content-between align-items-center">
-                        <Col xs={12} sm={12} md={6}>
-                            <h4>{patient}</h4>
-                            <h5>{doctor}</h5>
-                        </Col>
-                        <Col>
-                            <h5>{day}</h5>
-                        </Col>
-                        <Col className="text-end">
-                            <TiDelete
-                                className="text-danger fs-1"
-                                type="button"
-                                onClick={() => handleDelete(id)}
-                            />
-                        </Col>
-                    </Row>
-                </div>
-            ))}
-    ```
-
--   tiklananin id sine göre objenin icindeki boolean degeri degiline cevirme toggle yapma
-
-    ```jsx
-        setApps(
-                apps.map((item) =>
-                    item.id === id ? { ...item, consulted: !item.consulted } : item
-                )
-            );
-        };
-    ```
-
--   tiklananin id sine göre filter ile silme
-
-    ```jsx
-        const handleDelete = (id) => {{
-            setApps(apps.filter((item) => item.id !== id));
-        };
-    ```
-
--   Css ::after
-
-    ```css
-    .consulted::after {
-        content: "CONSULTED";
-        background-color: rgb(166, 18, 189);
-        color: white;
-        font-size: 2rem;
-        border-radius: 1rem;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        padding: 0.5rem;
-        transform: translate(-50%, -50%);
+      if (loading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+                <h1 className="text-danger">
+                    Loading...
+                </h1>
+            </div>
+        );
     }
+
+return (
+        <div>
+      <div/>
+      )
     ```
 
--   Semantic Commit Messages
+- Optional Chaining(?.)
+
+
+    ```jsx
+         {userData?.location?.city}- {userData?.location?.country}
+    ```
+
+- ECMAScript Internationalization API 
+    ```jsx
+       {new Date(userData?.dob?.date).toLocaleDateString("de-DE")}
+    ```
+
+- Semantic Commit Messages
     See how a minor change to your commit message style can make you a better programmer.
 
     Format: <type>(<scope>): <subject>
@@ -230,16 +186,16 @@ OR
 
     -   Example
 
-    ```
+ ```
                 feat: add hat wobble
         ^--^  ^------------^
         |     |
         |     +-> Summary in present tense.
         |
         +-------> Type: chore, docs, feat, fix, refactor, style, or test.
-    ```
+    
 
-- More Examples:
+ - More Examples:
     -   `feat`: (new feature for the user, not a new feature for build script)
     -   `fix`: (bug fix for the user, not a fix to a build script)
     -   `docs`: (changes to the documentation)
@@ -247,6 +203,7 @@ OR
     -   `refactor`: (refactoring production code, eg. renaming a variable)
     -   `test`: (adding missing tests, refactoring tests; no production code change)
     -   `chore`: (updating grunt tasks etc; no production code change)
+```
 
 ---
 
