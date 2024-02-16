@@ -13,7 +13,7 @@
 | [Optional chaining ?.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)                           |                                            |                    |
 | [ECMAScript Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)                           |                                            |                    |
 | [react-events](https://react.dev/learn#responding-to-events)                           |                                            |                    |
-| [React-Conditional rendering (&&,||,?:)](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
+| [React-Conditional rendering &&,||,?:](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
 | [React-Bootstrap](https://react-bootstrap.netlify.app/)                                 | npm i / yarn add react-bootstrap bootstrap |                                                                        |
 | [Semantic-Commits](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) |                                            |                                                                        |
 | [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) |                                            |                                                                        |
@@ -120,7 +120,7 @@ OR
 
 - useEffect() hook
 
-    ```jsx
+ ```jsx
         // src/components/User.jsx
 
            const [loading, isLoading] = useState(true);
@@ -144,11 +144,11 @@ OR
                     New User
                 </button>
 
- ```
+```
 
 - conditional rendering + cconditional Css
 
-    ```jsx
+     ```jsx
       if (loading) {
         return (
             <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
@@ -159,18 +159,17 @@ OR
         );
     }
 
-return (
+   return (
         <div>
       <div/>
       )
-    ```
+  ```
 
-- Optional Chaining(?.)
+- Optional Chaining?.
 
-
-    ```jsx
+```jsx
          {userData?.location?.city}- {userData?.location?.country}
-    ```
+```
 
 - ECMAScript Internationalization API 
     ```jsx
