@@ -4,8 +4,10 @@ import phone from "../assets/phone.svg";
 import email from "../assets/email.svg";
 
 const User = () => {
+    
     const [loading, isLoading] = useState(true);
     const [userData, setUserData] = useState("");
+
 
     const getUser = () => {
         fetch("https://randomuser.me/api/")
@@ -14,10 +16,15 @@ const User = () => {
             .catch((err) => console.log(err));
         isLoading(false);
     };
+
+
     useEffect(() => {
         getUser();
     }, []);
-    console.log(userData);
+
+    // console.log(userData);
+
+
     if (loading) {
         return (
             <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
@@ -27,6 +34,8 @@ const User = () => {
             </div>
         );
     }
+
+
     return (
         <div
             className="card text-center m-auto mt-4 shadow"
