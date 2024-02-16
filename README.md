@@ -10,7 +10,7 @@
 | -------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
 | [useEffect() Hook](https://react.dev/reference/react/useEffect) |                 | [Take a look at my portfolio](https://kaplanh.github.io/Portfolio_with_CssFlex/) |
 | [useState() Hook](https://react.dev/learn#using-hooks)                                  |                                 | [Visit me on Linkedin](https://www.linkedin.com/in/kaplan-h/)                    |
-| [Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)                           |                                            |                    |
+| [Optional chaining ?.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)                           |                                            |                    |
 | [ECMAScript Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)                           |                                            |                    |
 | [react-events](https://react.dev/learn#responding-to-events)                           |                                            |                    |
 | [React-Conditional rendering (&&,||,?:)](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
