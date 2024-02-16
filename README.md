@@ -13,7 +13,7 @@
 | [Optional chaining ?.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)                           |                                            |                    |
 | [ECMAScript Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)                           |                                            |                    |
 | [react-events](https://react.dev/learn#responding-to-events)                           |                                            |                    |
-| [React-Conditional rendering &&,||,?:](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
+| [React-Conditional rendering](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
 | [React-Bootstrap](https://react-bootstrap.netlify.app/)                                 | npm i / yarn add react-bootstrap bootstrap |                                                                        |
 | [Semantic-Commits](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) |                                            |                                                                        |
 | [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) |                                            |                                                                        |
@@ -193,16 +193,16 @@ OR
         |
         +-------> Type: chore, docs, feat, fix, refactor, style, or test.
     
-
+```
  - More Examples:
     -   `feat`: (new feature for the user, not a new feature for build script)
     -   `fix`: (bug fix for the user, not a fix to a build script)
     -   `docs`: (changes to the documentation)
-    -   `style`: (formatting, missing semi colons, etc; no production code change)
+    -   `style`: (formatting, missing semi-colons, etc; no production code change)
     -   `refactor`: (refactoring production code, eg. renaming a variable)
     -   `test`: (adding missing tests, refactoring tests; no production code change)
     -   `chore`: (updating grunt tasks etc; no production code change)
-```
+
 
 ---
 
