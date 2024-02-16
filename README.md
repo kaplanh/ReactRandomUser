@@ -1,22 +1,23 @@
-# Appointment App
+# React Random User
 
 [:point_right: Click here to see on browser](https://random-user-with-react-v1.netlify.app/)
 
-![appointment]()
+![random user_with react](https://github.com/kaplanh/ReactRandomUser/assets/101884444/3ecc4597-20e1-4bbb-b326-7b50bdeec34f)
 
 ---
 
 | **What's used in this app ?**                                                           | **How use third party libraries**          | **Author**                                                                       |
-| --------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
-| [useEfect() Hook](https://react.dev/learn#using-hooks)            |                                            | [Take a look at my portfolio](https://kaplanh.github.io/Portfolio_with_CssFlex/) |
-| [useState() Hook](https://react.dev/learn#using-hooks)                                  |                                            | [Visit me on Linkedin](https://www.linkedin.com/in/kaplan-h/)                    |
-| [react-events](https://react.dev/learn#responding-to-events)                            |                                            |                    |
-| [React-Conditional rendering](https://react.dev/learn#conditional-rendering)            |                                            |                                                                                  |
-| [React-Bootstrap](https://react-bootstrap.netlify.app/)                                 | npm i / yarn add react-bootstrap bootstrap |                                                                                  |
-| [React-icons](https://react-icons.github.io/react-icons/)                               | npm i / yarn add react-icons               |                                                                                  |
-| [props-drilling](https://react.dev/learn#sharing-data-between-components)               |                                            |                                                                                  |
-| [Semantic-Commits](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) |                                            |                                                                                  |
-| Deploy with [Netlify](https://app.netlify.com/teams/kaplanh/sites)                                      |                                            |                                                                                  |
+| -------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
+| [useEffect() Hook](https://react.dev/reference/react/useEffect) |                 | [Take a look at my portfolio](https://kaplanh.github.io/Portfolio_with_CssFlex/) |
+| [useState() Hook](https://react.dev/learn#using-hooks)                                  |                                 | [Visit me on Linkedin](https://www.linkedin.com/in/kaplan-h/)                    |
+| [Optional Chaning](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)                           |                                            |                    |
+| [react-events](https://react.dev/learn#responding-to-events)                           |                                            |                    |
+| [React-Conditional rendering](https://react.dev/learn#conditional-rendering)            |                                            |     |                                      
+| [React-Bootstrap](https://react-bootstrap.netlify.app/)                                 | npm i / yarn add react-bootstrap bootstrap |                                                                        |
+| [Semantic-Commits](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) |                                            |                                                                        |
+| [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) |                                            |                                                                        |
+| Deploy with [Netlify](https://app.netlify.com/teams/kaplanh/sites)                                      |                                            |                                                       |
+|API [randomuser.me](https://randomuser.me/api/)                                      |                                            |                                                       |
 
 ---
 
@@ -92,18 +93,14 @@ OR
 │     └── index.html
 |----src (folder)
 |    |--- components (folder)
-│    │       ├── AddModal.jsx
-│    │       ├── AppointmentList.jsx
-│    │       ├── Doctors.jsx
+│    │       ├── User.jsx
 │    │
-|    |--- helpers (folder)
-|    |       |── data.js
+|    |--- assets (folder)
+│    │       ├── email.svg
+│    │       ├── location.svg
+│    │       ├── phone.svg
 │    │
-│    |--- pages (folder)
-|    |      ├── Home.jsx
-|    |
 │    ├--- App.js
-│    │--- App.css
 │    |--- index.js
 │
 │
@@ -120,69 +117,39 @@ OR
 
 ### At the end of the project, the following topics are to be covered;
 
--   Lifting state up
-
-    ````jsx
-    // src/Home.jsx
-        import Doctors from "../components/Doctors";
-        import AppointmentsList from "../components/AppointmentsList";
-        import { appointmentData } from "../helpers/data";
-        import { useState } from "react";
-
-        const Home = () => {
-            const [appointments, setAppointments] = useState(appointmentData);
-            return (
-                <main className="text-center mt-2">
-                    <h1 className="text-danger display-6">WELLCOME TO OUR HOSPITAL</h1>
-                    <Doctors apps={appointments} setApps={setAppointments} />
-                    <AppointmentsList apps={appointments} setApps={setAppointments} />
-                </main>
-            );
-        };
-
-        export default Home;
-
-
-    // src/Doctors.jsx
-    const Doctors = ({apps,setApps}) => {
-    const [show, setShow] = useState(false);
-    const [drName, setDrName] = useState("");
-    // const handleImgClick = () => {
-    //   setShow(true)
-    // }
-    return (
-
-
-
-        // src/AppointmentList.jsx
-        const AppointmentList = ({ apps, setApps }) => {
-        console.log(apps);
-
-        const handleDelete = (id) => {
-            setApps(apps.filter((item) => item.id !== id));
-        };
-
-        const handleDoubleClick = (id) => {
-            setApps(
-                apps.map((item) =>
-                    item.id === id ? { ...item, consulted: !item.consulted } : item
-                )
-            );
-        };
-        console.log(apps);
-        return (
-        ```
-
-
-
-        ```
-
-    ````
-
--   conditional rendering + cconditional Css
+-   useEffect() hook
 
     ```jsx
-    i {apps.length < 1 && (
+        // src/components/User.jsx
+
+           const [loading, isLoading] = useState(true);
+           const [userData, setUserData] = useState("");
+
+
+    
+             const getUser = () => {
+            fetch("https://randomuser.me/api/")
+                .then((res) => res.json())
+                .then((data) => setUserData(data.results[0]))
+                .catch((err) => console.log(err));
+            isLoading(false);
+        };
+    
+         useEffect(() => {
+            getUser();
+        }, []);
+
+     <button onClick={getUser} className="btn btn-success">
+                    New User
+                </button>
+
+ ```
+
+ 
+- conditional rendering + cconditional Css
+
+    ```jsx
+       i {apps.length < 1 && (
                 <img
                     src="./img/appointment.jpg"
                     width="70%"
